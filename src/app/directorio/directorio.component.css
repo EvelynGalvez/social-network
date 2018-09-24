@@ -6,17 +6,20 @@
   width: 100%;
   height: 780px;
   margin-top: 10%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .title-card {
   height: 12%;
   margin-bottom: 0px;
+  font-weight: bold;
 }
 
 .img-card {
   width: 100%;
   height: auto;
   margin-top: 0px;
+  z-index: -3;
 }
 
 .text-card {
@@ -24,4 +27,5 @@
   margin-top: 10%;
   padding-bottom: 0px;
   text-align: justify;
+  z-index: 100;
 }

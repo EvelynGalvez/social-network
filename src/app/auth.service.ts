@@ -16,6 +16,10 @@ export class AuthService {
     this.user = firebaseAuth.authState;
   }
 
+  loginFacebook() {
+    return this.firebaseAuth.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider() );
+  }
+
   loginGoogle() {
     return this.firebaseAuth.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider() );
   }
