@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-feeding',
-  templateUrl: './feeding.component.html',
-  styleUrls: ['./feeding.component.css']
+  selector: 'app-cuidados',
+  templateUrl: './cuidados.component.html',
+  styleUrls: ['./cuidados.component.css']
 })
-export class FeedingComponent implements OnInit {
+export class CuidadosComponent implements OnInit {
 
   @Input() title:string;   //decorador
   @Input() image:string;

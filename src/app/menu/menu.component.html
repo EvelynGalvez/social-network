@@ -15,19 +15,19 @@
       </i></mat-icon>
       <span>Alimentación</span>
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item routerLink="/cuidados">
       <mat-icon><i class="material-icons">
           pets
       </i></mat-icon>
       <span>Cuidados</span>
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item routerLink="/directorio">
       <mat-icon><i class="material-icons">
           pets
       </i></mat-icon>
       <span>Directorio Veterinario</span>
     </button>
-    <button mat-menu-item (click)="onLogout()">
+    <button mat-menu-item (click)="onLogout()" routerLink="/login">
       <mat-icon><i class="material-icons">
           pets
       </i></mat-icon>

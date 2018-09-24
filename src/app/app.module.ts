@@ -25,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FeedingComponent } from './feeding/feeding.component';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
+import { CuidadosComponent } from './cuidados/cuidados.component';
+import { DirectorioComponent } from './directorio/directorio.component';
 
 const appRoutes: Routes = [ // ruta + componente
   {
@@ -42,6 +44,14 @@ const appRoutes: Routes = [ // ruta + componente
   {
     path: 'muro',
     component: PublishComponent
+  },
+  {
+    path: 'cuidados',
+    component: CuidadosComponent
+  },
+  {
+    path: 'directorio',
+    component: DirectorioComponent
   }
 ];
 
@@ -53,7 +63,9 @@ const appRoutes: Routes = [ // ruta + componente
     WelcomeComponent,
     PublishComponent,
     MenuComponent,
-    FeedingComponent
+    FeedingComponent,
+    CuidadosComponent,
+    DirectorioComponent
   ],
   imports: [
     BrowserModule,

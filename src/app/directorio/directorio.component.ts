@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-feeding',
-  templateUrl: './feeding.component.html',
-  styleUrls: ['./feeding.component.css']
+  selector: 'app-directorio',
+  templateUrl: './directorio.component.html',
+  styleUrls: ['./directorio.component.css']
 })
-export class FeedingComponent implements OnInit {
+export class DirectorioComponent implements OnInit {
 
   @Input() title:string;   //decorador
   @Input() image:string;
