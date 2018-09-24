@@ -3,6 +3,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.btn-add {
+  float: right;
+}
+
 .fill-space {
   flex: 1 1 auto;
 }

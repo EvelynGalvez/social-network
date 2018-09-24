@@ -1,5 +1,8 @@
-<app-post *ngFor="let post of (posts$ | async)"
+<button class="btn btn-add" mat-button *ngIf="authService.user | async" (click)="goToNew()">Agregar Publicación</button>
+<div *ngIf="authService.user | async">
+  <app-post *ngFor="let post of (posts$ | async)"
           [image]="post.image"
           [description]="post.description"></app-post>
+</div>
 
           

@@ -11,10 +11,6 @@ export class AppComponent {
   title = 'InterPet';
 
   constructor(private router: Router, private authService: AuthService) {}
-
-  goToNew() {
-    this.router.navigate(['/new']);
-  }
 }
 
 
