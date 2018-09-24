@@ -1,0 +1,28 @@
+.form-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+}
+
+textarea {
+  resize: none;
+  margin-top: 100px;
+}
+
+.center {
+display: block;
+text-align: center;
+}
+
+.btn-publish {
+  background-color: #E8ECEF;
+  color: black;
+  border:none;
+  margin-bottom: 4%;
+}
+
+.input-file {
+  width: 100%;
+  text-align: center;
+}

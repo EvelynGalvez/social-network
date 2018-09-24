@@ -1,0 +1,19 @@
+<!--ngIf desaparecerá lo que esta dentro del div-->
+<div class="form-data col-xs-12 col-md-10 col-lg-4" *ngIf="!(authService.user | async)">
+  <h1 class="title-sn"><p class="letter-i">I</p><p class="letter-n">n</p><p class="letter-t">t</p><p class="letter-e">e</p><p class="letter-r">r</p><p class="letter-p">P</p><p class="letter-2e">e</p><p class="letter-2t">t</p></h1>
+    <form [formGroup]="authForm" (ngSubmit)="onRegister()">
+      <input class="form-control data" type="email" formControlName="email" placeholder="e-mail">
+      <input class="form-control data"type="password" formControlName="password" placeholder="password">
+      <button class="btn btn-dark data col-10" type="submit" [disabled]="!authForm.valid">Registrarse</button>
+      <!--Ejecutará ngSubmit -> onRegister puesto en la etiqueta form-->
+      <button class="btn btn-dark data btn-login col-10" type="button" (click)="onLogin()" [disabled]="!authForm.valid">Log - in</button>
+      <!--Ejecutará onLogin-->
+    </form>
+</div>
+
+<div class="row" *ngIf="!(authService.user | async)">
+  <div class="img-init col-xs-6 col-md-8">
+    <img src="../../assets/img/catsdogs.png" class="img-fluid" alt="Responsive image">
+  </div>
+</div>
+

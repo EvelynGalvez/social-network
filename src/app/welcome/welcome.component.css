@@ -1,0 +1,23 @@
+.welcome {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+}
+
+.bienvenido {
+  display: inline-block;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.right {
+  position: relative;
+  left: 3%;
+  top: 10px;
+}
+
+.container {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}

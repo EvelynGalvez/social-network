@@ -1,0 +1,6 @@
+<div class="container welcome" *ngIf="authService.user | async">
+    <div class="right">
+      <p class="bienvenido">Bienvenido : {{((authService.user | async) || {}).email}}</p>
+    </div>
+</div>
+
