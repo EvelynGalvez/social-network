@@ -1,8 +1,6 @@
-import { Component, OnInit} from '@angular/core';
-//import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import { AuthService } from '../auth.service';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-publish',
@@ -11,34 +9,22 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 })
 export class PublishComponent implements OnInit {
 
-  publish: FormGroup;
-  postList$ :AngularFireList<any>;
-
-  constructor(private database:AngularFireDatabase, private formBuilder: FormBuilder) { 
-    this.createPublish(); 
-    //hacemos una consulta a la base de datos
-    this.postList$ = this.database.list('/posts');
-  }
+  constructor(private authService: AuthService, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
-  
-  createPublish() {
-    this.publish = this.formBuilder.group({
-      title: ['', Validators.required],
-      image: ['', Validators.required],
-      description: ['', Validators.required]
-    });
+  onLogout() {
+    this.authService.logout()
+      .then(() => {
+        //Logout exitoso, adios usuario!
+      })
+      .catch(() => {
+        //Algo salió mal, avisemos mejor para que reintente
+        this.snackBar.open('Error al tratar de cerrar sesión, trata otra vez'
+          , null/*No necesitamos botón en el aviso*/
+          , {
+            duration: 3000
+          });
+      });
   }
-
-  addPost() { 
-    const newPost = { //tipo inferido
-      image: this.publish.value.image,
-      description: this.publish.value.description,
-    };
-
-    this.postList$.push(newPost);//esto agrega un nuevo post
-    this.publish.reset();
-  }
-
 }
