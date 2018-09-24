@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 //Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from "@angular/fire/database"
 import { environment } from '../environments/environment';
 import { AuthService } from './auth.service';
 import { AuthFormComponent } from './auth-form/auth-form.component';
@@ -28,6 +29,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CuidadosComponent } from './cuidados/cuidados.component';
 import { DirectorioComponent } from './directorio/directorio.component';
 import { LoginCuentasComponent } from './login-cuentas/login-cuentas.component';
+import { WallComponent } from './wall/wall.component';
 
 const appRoutes: Routes = [ // ruta + componente
   {
@@ -67,7 +69,8 @@ const appRoutes: Routes = [ // ruta + componente
     FeedingComponent,
     CuidadosComponent,
     DirectorioComponent,
-    LoginCuentasComponent
+    LoginCuentasComponent,
+    WallComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ const appRoutes: Routes = [ // ruta + componente
     MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     ReactiveFormsModule,
     MatSnackBarModule,
     MatInputModule,
