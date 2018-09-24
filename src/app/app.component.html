@@ -5,6 +5,7 @@
     <span><img src="../assets/img/cat-clipart-dog-free-11.png" class="img-logo" height="auto" width="180px"></span>
   </mat-toolbar-row>
 </mat-toolbar>
+<button mat-button *ngIf="authService.user | async" (click)="goToNew()">Agregar Publicación</button>
 
 <router-outlet></router-outlet>
  

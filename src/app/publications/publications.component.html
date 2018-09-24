@@ -1,0 +1,5 @@
+<app-post *ngFor="let post of (posts$ | async)"
+          [image]="post.image"
+          [description]="post.description"></app-post>
+
+          

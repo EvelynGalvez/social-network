@@ -13,7 +13,7 @@ export class PublishComponent implements OnInit {
    //esto es del tipo observable de firebase, son asincronos con valor variable
   constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase) {
     this.createPublish();
-    this.postList$ = this.database.list('/memes'); // signo $ es una convención para los observables 
+    this.postList$ = this.database.list('/posts'); // signo $ es una convención para los observables 
    }
 
   ngOnInit() {

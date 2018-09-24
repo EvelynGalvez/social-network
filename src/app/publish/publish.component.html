@@ -2,7 +2,7 @@
 
 <form class="form-publish col-xs-12 col-md-12 col-lg-6" [formGroup]="publish" (ngSubmit)="addPost()">
     <p>Imagen que deseas publicar</p>
-    <input #image type="file" formControlName="image">
+    <input #image type="text" formControlName="image">
     <p>Descripción</p>
     <textarea #description formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
   

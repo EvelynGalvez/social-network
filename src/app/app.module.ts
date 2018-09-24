@@ -29,6 +29,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CuidadosComponent } from './cuidados/cuidados.component';
 import { DirectorioComponent } from './directorio/directorio.component';
 import { LoginCuentasComponent } from './login-cuentas/login-cuentas.component';
+import { PostComponent } from './post/post.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 const appRoutes: Routes = [ // ruta + componente
   {
@@ -44,16 +46,24 @@ const appRoutes: Routes = [ // ruta + componente
     component: FeedingComponent
   },
   {
-    path: 'muro',
-    component: PublishComponent
-  },
-  {
     path: 'cuidados',
     component: CuidadosComponent
   },
   {
     path: 'directorio',
     component: DirectorioComponent
+  },
+  {
+    path: 'muro',
+    component: PublicationsComponent
+  },
+  {
+    path: 'new',
+    component: PublishComponent
+  },
+  {
+    path: 'post/:id',
+    component: PostComponent
   }
 ];
 
@@ -68,7 +78,9 @@ const appRoutes: Routes = [ // ruta + componente
     FeedingComponent,
     CuidadosComponent,
     DirectorioComponent,
-    LoginCuentasComponent
+    LoginCuentasComponent,
+    PostComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,
