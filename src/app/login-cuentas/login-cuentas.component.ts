@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginCuentasComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, public router: Router) { }
 
   ngOnInit() {
   }
@@ -18,6 +18,7 @@ export class LoginCuentasComponent implements OnInit {
     this.authService.loginGoogle()
     .then((res)=> {
       console.log('usuario autenticado con google');
+      this.router.navigate(['/muro']);
     }).catch( err => console.log(err.message));
-  }
+  }  
 }

@@ -10,15 +10,17 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private authService: AuthService, public snackBar: MatSnackBar) { }
+  constructor(private authService: AuthService, public snackBar: MatSnackBar, public router: Router) { }
 
   ngOnInit() {
   }
 
   onLogout() {
     this.authService.logout()
-      .then(() => {
+      .then((res) => {
+        console.log(res);
         //Logout exitoso, adios usuario!
+        this.router.navigate(['/login']);
       })
       .catch(() => {
         //Algo salió mal, avisemos mejor para que reintente
