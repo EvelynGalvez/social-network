@@ -1,7 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-//import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import { AuthService } from '../auth.service';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Component({
@@ -10,15 +8,13 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
   styleUrls: ['./publish.component.css']
 })
 export class PublishComponent implements OnInit {
-
   publish: FormGroup;
   postList$ :AngularFireList<any>;
-
-  constructor(private database:AngularFireDatabase, private formBuilder: FormBuilder) { 
-    this.createPublish(); 
-    //hacemos una consulta a la base de datos
-    this.postList$ = this.database.list('/posts');
-  }
+   //esto es del tipo observable de firebase, son asincronos con valor variable
+  constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase) {
+    this.createPublish();
+    this.postList$ = this.database.list('/memes'); // signo $ es una convención para los observables 
+   }
 
   ngOnInit() {
   }
@@ -39,5 +35,4 @@ export class PublishComponent implements OnInit {
     this.postList$.push(newPost);//esto agrega un nuevo post
     this.publish.reset();
   }
-
 }
