@@ -27,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
 import { CuidadosComponent } from './cuidados/cuidados.component';
 import { DirectorioComponent } from './directorio/directorio.component';
+import { LoginCuentasComponent } from './login-cuentas/login-cuentas.component';
 
 const appRoutes: Routes = [ // ruta + componente
   {
@@ -65,7 +66,8 @@ const appRoutes: Routes = [ // ruta + componente
     MenuComponent,
     FeedingComponent,
     CuidadosComponent,
-    DirectorioComponent
+    DirectorioComponent,
+    LoginCuentasComponent
   ],
   imports: [
     BrowserModule,

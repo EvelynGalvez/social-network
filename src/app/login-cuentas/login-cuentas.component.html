@@ -1,0 +1,7 @@
+<div class="container-login col-xs-12 col-md-10 col-lg-3" *ngIf="!(authService.user | async)">
+  <h2 class="title-fb">Ingresa con tus cuentas</h2>
+      <button class="btn btn-primary btn-fb col-10"><i class="fab fa-facebook"></i>  Facebook</button>
+      <!--Ejecutará ngSubmit -> onRegister puesto en la etiqueta form-->
+      <button class="btn btn-dark btn-g btn-login col-10"><i class="fab fa-google"></i> Google</button>
+      <!--Ejecutará onLogin-->
+</div>

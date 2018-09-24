@@ -1,0 +1,41 @@
+.container-login {
+  border-radius: 3%;
+  background-color: #f4e1d0;
+  margin-top: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title-fb {
+  font-family: 'Alfa Slab One', cursive;
+  text-align: center;
+}
+
+.btn-fb {
+  background-color: #4167B2;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-g {
+  background-color: #F03F38;
+  margin-bottom: 2%;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+  .container-login{
+    display: block;
+    margin-left: 72%;
+    position: absolute;
+    top: 15%;
+  }
+}
