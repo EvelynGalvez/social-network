@@ -18,6 +18,7 @@ export class LoginCuentasComponent implements OnInit {
     this.authService.loginGoogle()
     .then((res)=> {
       console.log('usuario autenticado con google');
+      console.log(res);
       this.router.navigate(['/muro']);
     }).catch( err => console.log(err.message));
   }  

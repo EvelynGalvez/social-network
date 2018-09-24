@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AuthFormComponent implements OnInit {
   authForm: FormGroup;
+  public email: string;
+  public password: string;
 
   //Solicitamos en el constructor todas las cosas necesarias 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
@@ -51,8 +53,9 @@ export class AuthFormComponent implements OnInit {
 
   onLogin() {
     this.authService.login(this.authForm.value.email, this.authForm.value.password)
-      .then(() => {
+      .then((res) => {
         //Login exitoso, así que celebramos con el usuario (?)
+        console.log(res);
         this.router.navigate(['/muro']);
       })
       .catch(() => {
