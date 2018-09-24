@@ -9,6 +9,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.welcome {
+  margin-left: 2%;
+}
+
 .title-card {
   height: 12%;
   margin-bottom: 0px;

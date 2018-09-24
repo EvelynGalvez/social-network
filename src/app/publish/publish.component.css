@@ -1,4 +1,4 @@
-.form-group {
+/*.form-group {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -27,4 +27,40 @@ text-align: center;
 .input-file {
   width: 100%;
   text-align: center;
+} */
+
+.form-publish {
+  background-color: #f4e1d0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3%;
+  margin-top: 6%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 200%;
+  width: 100%;
+}
+
+.welcome {
+  position: absolute;
+  left: 2%;
+  font-size: 200%;
+}
+
+.textarea {
+  resize: none;
+  margin-top: 10px;
+  border-radius: 5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 1200px) {
+  .form-publish{
+    font-size: 130%;
+  }
+
+  .welcome {
+    font-size: 130%;
+    margin-left: 1%;
+  }
 }

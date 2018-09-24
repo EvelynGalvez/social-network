@@ -1,7 +1,23 @@
-<app-welcome></app-welcome>
-<div *ngIf="authService.user | async">
+<app-welcome class="welcome"></app-welcome>
+
+<form class="form-publish col-xs-12 col-md-12 col-lg-6" [formGroup]="publish" (ngSubmit)="addPost()">
+    <p>Imagen que deseas publicar</p>
+    <input #image type="file" formControlName="image">
+    <p>Descripción</p>
+    <textarea #description formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
+  
+    <button type="submit" [disabled]="!publish.valid">
+      ¡Agrega tu publicación!
+    </button>
+</form>
+  <p>
+    {{publish.value | json}}
+    {{publish.status}}
+  </p>
+
+<!-- 
 <div class="container">
-<form>
+<form [formGroup]="publish" (ngSubmit)="addPost()">
   <div class="col-lg-12 col-md-12 col-xs-12 form-group">
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
   </div>
@@ -16,9 +32,13 @@
           <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
         </div>
       </div>
-      <button type="button" class="btn btn-dark btn-publish col-xs-12 col-lg-2">Publicar</button>
+      <button type="submit" [disabled]="!publish.valid" class="btn btn-dark btn-publish col-xs-12 col-lg-2">Publicar</button>
     </div>
   </div>
 </form>
-</div>
-</div>
+</div> -->
+<!-- <p>
+  {{publish.value | json}}
+  {{publish.status}}
+  {{publish.get('title').errors | json}}
+</p> -->
