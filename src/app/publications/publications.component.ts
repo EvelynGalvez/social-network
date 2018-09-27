@@ -19,8 +19,4 @@ export class PublicationsComponent implements OnInit {
   ngOnInit() {
   }
 
-  goToNew() {
-    this.router.navigate(['/new']);
-  }
-
 }

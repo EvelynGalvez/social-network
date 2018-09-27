@@ -32,4 +32,8 @@ export class MenuComponent implements OnInit {
       });
   }
 
+  goToNew() {
+    this.router.navigate(['/new']);
+  }
+
 }
