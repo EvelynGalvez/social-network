@@ -19,7 +19,7 @@ export class LoginCuentasComponent implements OnInit {
     .then((res)=> {
       console.log('usuario autenticado con facebook');
       console.log(res);
-      this.router.navigate(['/muro']);
+      this.router.navigate(['/new']);
     }).catch( err => console.log(err.message));
   }
 
@@ -28,7 +28,7 @@ export class LoginCuentasComponent implements OnInit {
     .then((res)=> {
       console.log('usuario autenticado con google');
       console.log(res);
-      this.router.navigate(['/muro']);
+      this.router.navigate(['/new']);
     }).catch( err => console.log(err.message));
   }  
 }

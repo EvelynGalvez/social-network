@@ -29,16 +29,12 @@ export class AuthFormComponent implements OnInit {
     });
   }
 
-  /*
-   * Instalé un módulo para hacer snackbars desde material.angular.io :
-   * MatSnackBarModule
-   */
   onRegister() {
     this.authService.signup(this.authForm.value.email, this.authForm.value.password)
       .then((res) => {
         //Registro exitoso, celebremos esto!
         console.log(res);
-        this.router.navigate(['/muro']);
+        this.router.navigate(['/new']);
 
       })
       .catch(() => {
@@ -56,7 +52,7 @@ export class AuthFormComponent implements OnInit {
       .then((res) => {
         //Login exitoso, así que celebramos con el usuario (?)
         console.log(res);
-        this.router.navigate(['/muro']);
+        this.router.navigate(['/new']);
       })
       .catch(() => {
         //Algo salió mal, avisemos mejor para que reintente

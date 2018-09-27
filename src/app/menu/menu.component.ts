@@ -20,7 +20,8 @@ export class MenuComponent implements OnInit {
       .then((res) => {
         console.log(res);
         //Logout exitoso, adios usuario!
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
+        document.getElementById('btnMenu').style.display='none';
       })
       .catch(() => {
         //Algo salió mal, avisemos mejor para que reintente

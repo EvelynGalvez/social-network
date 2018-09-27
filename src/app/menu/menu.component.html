@@ -1,9 +1,9 @@
 <div *ngIf="authService.user | async">
-  <button class="menu" mat-icon-button [matMenuTriggerFor]="menu">
+  <button id="btnMenu" class="menu" mat-icon-button [matMenuTriggerFor]="menu" *ngIf="authService.user | async">
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu class="my-menu" #menu="matMenu">
-    <button mat-menu-item routerLink="/muro" (click)="goToNew()">
+    <button mat-menu-item (click)="goToNew()">
       <mat-icon><i class="material-icons">
           pets
       </i></mat-icon>
@@ -33,7 +33,7 @@
       </i></mat-icon>
       <span>Adopciones</span>
     </button>
-    <button mat-menu-item (click)="onLogout()" routerLink="/login">
+    <button mat-menu-item (click)="onLogout()" routerLink="/">
       <mat-icon><i class="material-icons">
           pets
       </i></mat-icon>

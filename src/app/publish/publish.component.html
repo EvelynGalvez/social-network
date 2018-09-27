@@ -1,11 +1,9 @@
 <app-welcome class="welcome"></app-welcome>
-
-<form class="form-publish col-xs-12 col-md-12 col-lg-5" [formGroup]="publish" (ngSubmit)="addPost()">
+<form class="form-publish col-xs-12 col-md-12 col-lg-5" [formGroup]="publish" (ngSubmit)="addPost()" *ngIf="authService.user | async">
     <textarea #description formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
   
     <button class="btn btn-dark btn-publish" type="submit">
       ¡Agrega tu publicación!
     </button>
 </form>
-
 <app-publications></app-publications>
