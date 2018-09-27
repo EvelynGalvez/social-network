@@ -1,17 +1,17 @@
 <app-welcome class="welcome"></app-welcome>
 
-<form class="form-publish col-xs-12 col-md-12 col-lg-6" [formGroup]="publish" (ngSubmit)="addPost()">
-    <p>Imagen que deseas publicar</p>
-    <input #image type="file" formControlName="image">
-
-    <p>Descripción</p>
+<form class="form-publish col-xs-12 col-md-12 col-lg-5" [formGroup]="publish" (ngSubmit)="addPost()">
     <textarea #description formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
   
-    <button type="submit" [disabled]="!publish.valid">
+    <button class="btn btn-dark btn-publish" type="submit">
       ¡Agrega tu publicación!
     </button>
 </form>
-<app-publications></app-publications>
+<div *ngIf="authService.user | async">
+  <app-post *ngFor="let post of (posts$ | async)"
+          [description]="post.description"></app-post>
+  <!-- <app-upload-img></app-upload-img> -->
+</div>
 
 <!-- 
 <div class="container">

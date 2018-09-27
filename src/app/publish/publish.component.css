@@ -1,57 +1,35 @@
-/*.form-group {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6%;
-  font-family: 'Roboto', sans-serif;
-}
-
-textarea {
-  resize: none;
-  margin-top: 100px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.center {
-display: block;
-text-align: center;
-}
-
-.btn-publish {
-  background-color: #E8ECEF;
-  color: black;
-  border:none;
-  margin-bottom: 4%;
-}
-
-.input-file {
-  width: 100%;
-  text-align: center;
-} */
-
 .form-publish {
   background-color: #f4e1d0;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 3%;
+  border-radius: 5px;
   margin-top: 10%;
   font-family: 'Roboto', sans-serif;
   font-size: 200%;
   width: 100%;
+  padding-top: 2%;
+  padding-bottom: 1%;
 }
 
 .welcome {
   position: absolute;
-  left: 2%;
+  left: 1%;
   font-size: 200%;
 }
 
-.textarea {
+textarea {
   resize: none;
-  margin-top: 10px;
-  border-radius: 5%;
+  border-radius: 5px;
   font-family: 'Roboto', sans-serif;
+}
+
+.btn-publish {
+  font-size: 80%;
+  font-weight: bold;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2%;
 }
 
 @media (min-width: 1200px) {
@@ -62,5 +40,25 @@ text-align: center;
   .welcome {
     font-size: 130%;
     margin-left: 1%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .form-publish{
+    font-size: 100%;
+    margin-top: 10%;
+  }
+
+  .welcome {
+    font-size: 100%;
+    margin-left: 1%;
+  }
+
+  .btn-publish {
+    font-size: 80%;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5%;
   }
 }
