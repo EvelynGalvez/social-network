@@ -1,4 +1,4 @@
-<!-- <button id="btn-publicar" class="btn btn-add" mat-button *ngIf="authService.user | async" (click)="goToNew()" (click)="btnHidden()">Agregar Publicación</button> -->
+
 <div *ngIf="authService.user | async">
   <app-post *ngFor="let post of (posts$ | async)"
           [description]="post.description"></app-post>
