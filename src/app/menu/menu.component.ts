@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private authService: AuthService, public snackBar: MatSnackBar, public router: Router) { }
+  constructor(public authService: AuthService, public snackBar: MatSnackBar, public router: Router) { }
 
   ngOnInit() {
   }

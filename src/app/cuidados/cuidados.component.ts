@@ -12,7 +12,7 @@ export class CuidadosComponent implements OnInit {
   @Input() image:string;
   @Input() description:string;
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }

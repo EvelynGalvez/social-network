@@ -8,11 +8,7 @@ import { AuthService } from '../auth.service';
 })
 export class DirectorioComponent implements OnInit {
 
-  @Input() title:string;   //decorador
-  @Input() image:string;
-  @Input() description:string;
-
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }

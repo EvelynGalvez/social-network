@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PublicationsComponent implements OnInit {
   posts$:Observable<any>;
 
-  constructor(private database:AngularFireDatabase, private authService: AuthService, private router: Router) {
+  constructor(private database:AngularFireDatabase, public authService: AuthService, private router: Router) {
     this.posts$ = this.database.list('/posts').valueChanges(); 
   }
 

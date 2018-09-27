@@ -2,16 +2,15 @@
 
 <form class="form-publish col-xs-12 col-md-12 col-lg-6" [formGroup]="publish" (ngSubmit)="addPost()">
     <p>Imagen que deseas publicar</p>
-    <input #image type="text" formControlName="image">
+    <input #image type="file" formControlName="image">
 
     <p>Descripción</p>
     <textarea #description formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
   
-    <button type="submit" [disabled]="!publish.valid" (click)="goToWall()">
+    <button type="submit" [disabled]="!publish.valid">
       ¡Agrega tu publicación!
     </button>
 </form>
-
 <app-publications></app-publications>
 
 <!-- 

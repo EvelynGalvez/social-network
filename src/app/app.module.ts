@@ -31,6 +31,8 @@ import { DirectorioComponent } from './directorio/directorio.component';
 import { LoginCuentasComponent } from './login-cuentas/login-cuentas.component';
 import { PostComponent } from './post/post.component';
 import { PublicationsComponent } from './publications/publications.component';
+import { UploadImgComponent } from './upload-img/upload-img.component';
+import { AdoptionsComponent } from './adoptions/adoptions.component';
 
 const appRoutes: Routes = [ // ruta + componente
   {
@@ -58,6 +60,10 @@ const appRoutes: Routes = [ // ruta + componente
     component: PublicationsComponent
   },
   {
+    path: 'adopciones',
+    component: AdoptionsComponent
+  },
+  {
     path: 'new',
     component: PublishComponent
   },
@@ -80,7 +86,9 @@ const appRoutes: Routes = [ // ruta + componente
     DirectorioComponent,
     LoginCuentasComponent,
     PostComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    UploadImgComponent,
+    AdoptionsComponent
   ],
   imports: [
     BrowserModule,

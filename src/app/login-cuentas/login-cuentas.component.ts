@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginCuentasComponent implements OnInit {
 
-  constructor(private authService: AuthService, public router: Router) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
   }

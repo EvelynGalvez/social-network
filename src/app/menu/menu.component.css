@@ -2,3 +2,7 @@
   background-color: orange;
   font-family: 'Roboto', sans-serif;
 }
+
+.my-menu {
+  z-index: 10;
+}
