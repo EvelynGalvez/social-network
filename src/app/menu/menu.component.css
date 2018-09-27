@@ -6,3 +6,11 @@
 .my-menu {
   z-index: 10;
 }
+
+.mat-menu-item {
+  background-color: orange;
+}
+
+.mat-menu-item:hover {
+  background-color: rgb(255, 136, 0);
+}

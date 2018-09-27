@@ -4,5 +4,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  margin-top: 5%;
+  margin-top: 2%;
+  text-align: justify;
+  word-wrap: break-word;
+  padding-top: 0.5%;
 }
