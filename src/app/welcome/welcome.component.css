@@ -1,13 +1,16 @@
 .welcome {
   color: black;
   font-family: 'Roboto', sans-serif;
-  margin-top: 10px;
+  background-color: rgba(253, 179, 42, 0.87);
 }
 
-.bienvenido {
+.name {
   display: inline-block;
   margin-right: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 2%;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 0px;
+  padding-top: 0px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -18,7 +21,14 @@
 }
 
 .container {
-  text-align: center;
+  text-align: left;
   margin: 0px;
   padding: 0px;
+  border-bottom: solid 1px rgb(63, 59, 51);
+}
+
+@media (max-width: 800px) {
+  .name {
+    padding-bottom: 5%;
+  }
 }

@@ -11,6 +11,8 @@ export class WelcomeComponent implements OnInit {
   public isLogin: boolean;
   public nombreUsuario: string;
   public emailUsuario: string;
+ /* public photoUsuario: string; */
+ 
 
   constructor(private authService: AuthService) { }
 
@@ -20,6 +22,7 @@ export class WelcomeComponent implements OnInit {
         this.isLogin = true;
         this.nombreUsuario = auth.displayName;
         this.emailUsuario = auth.email;
+        /*this.photoUsuario = auth.photoURL;*/
       } else {
         this.isLogin = false;
       }

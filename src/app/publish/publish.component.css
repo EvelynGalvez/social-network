@@ -30,6 +30,11 @@ textarea {
   border-radius: 5px;
   font-family: 'Roboto', sans-serif;
   margin-top: 2%;
+  background-color: #4d5053;
+}
+
+.btn-publish:hover {
+  background-color: #292929;
 }
 
 @media (min-width: 1200px) {
