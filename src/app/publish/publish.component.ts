@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { PostComponent } from '../post/post.component';
 
 @Component({
   selector: 'app-publish',
@@ -36,5 +37,16 @@ export class PublishComponent implements OnInit {
 
     this.postList$.push(newPost);//esto agrega un nuevo post
     this.publish.reset();
+  }
+
+  /*editPost(publish: PostComponent, post: Post) {
+    this.postList$.update(publish. {
+    image: this.publish.<any>;
+
+    }
+  }*/
+
+  deletePost($key: string){
+    this.postList$.remove($key);
   }
 }

@@ -2,7 +2,8 @@
 <div *ngIf="authService.user | async">
   <app-post *ngFor="let post of (posts$ | async)"
           [description]="post.description"></app-post>
-  <!-- <app-upload-img></app-upload-img> -->
+  
+  <!-- <app-upload-img></ap<button type="submit">Editar</button>p-upload-img> -->
 </div>
 
 
