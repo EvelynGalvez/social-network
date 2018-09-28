@@ -1,7 +1,8 @@
 
 <div *ngIf="authService.user | async">
   <app-post *ngFor="let post of (posts$ | async)"
-          [description]="post.description"></app-post>
+    [post]="post.payload.val()" [key]="post.payload.key">
+  </app-post>
   <!-- <app-upload-img></app-upload-img> -->
 </div>
 

@@ -15,7 +15,7 @@ export class PublishComponent implements OnInit {
    //esto es del tipo observable de firebase, son asincronos con valor variable
   constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase, private router: Router, public authService: AuthService) {
     this.createPublish();
-    this.postList$ = this.database.list('/posts'); // signo $ es una convención para los observables 
+    this.postList$ = this.database.list('/posts');
    }
 
   ngOnInit() {
@@ -23,14 +23,12 @@ export class PublishComponent implements OnInit {
   
   createPublish() {
     this.publish = this.formBuilder.group({
-      image: ['', Validators.required],
       description: ['', Validators.required]
     });
   }
 
   addPost() { 
-    const newPost = { //tipo inferido
-      image: this.publish.value.image,
+    const newPost = { 
       description: this.publish.value.description,
     };
 

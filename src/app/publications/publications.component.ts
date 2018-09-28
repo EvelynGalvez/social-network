@@ -13,7 +13,7 @@ export class PublicationsComponent implements OnInit {
   posts$:Observable<any>;
 
   constructor(private database:AngularFireDatabase, public authService: AuthService, private router: Router) {
-    this.posts$ = this.database.list('/posts').valueChanges(); 
+    this.posts$ = this.database.list('/posts').snapshotChanges(); 
   }
 
   ngOnInit() {
