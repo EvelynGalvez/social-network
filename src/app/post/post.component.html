@@ -8,5 +8,6 @@
     <mat-card-actions>
         <a class="btn btnEdit btn-primary text-black" (click)="edit(key)"><i class="fas fa-edit"></i></a>
         <a class="btn btnDelete btn-danger text-white" (click)="delete(key)"><i class="fas fa-trash-alt"></i></a>
+        <a class="btn btnLike btn-dark text-white" (click)="addLike(postId, post.likes)"><i class="fas fa-paw"></i></a><p>{{post.likes}}</p>
     </mat-card-actions> 
 </mat-card>

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { MatCardModule } from '@angular/material/card';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 export class PostComponent implements OnInit {
 
   @Input() post;
+  @Input() postId;
   @Input() key;
+  editContent: FormGroup;
 
   constructor(public authService: AuthService, private database: AngularFireDatabase) { }
 
@@ -20,13 +23,12 @@ export class PostComponent implements OnInit {
   }
 
   edit(key, object) {
-    this.database.object(`posts/${key}`).update(object);
   }
+
 
   delete(key) {
     if (confirm('Estas seguro de eliminar esta publicación?')) {
     this.database.object(`posts/${key}`).remove();
     }
   }
- 
 }
