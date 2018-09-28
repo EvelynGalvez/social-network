@@ -1,4 +1,6 @@
 <mat-card class="post-card">
     <app-welcome class="welcome"></app-welcome>
     <p>{{description}}</p>
+    <button type="submit" class="btn-secondary">Editar</button>
+    <button type="submit" class="btn-secondary" (ngSubmit)="deletePost()" >Eliminar</button>
 </mat-card>
