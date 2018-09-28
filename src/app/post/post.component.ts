@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { MatCardModule } from '@angular/material/card';
@@ -14,8 +14,12 @@ export class PostComponent implements OnInit {
 
   @Input() post;
   @Input() postId;
+  @Input() likes : number = 0
   @Input() key;
   editContent: FormGroup;
+
+  @Output()
+  change: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(public authService: AuthService, private database: AngularFireDatabase) { }
 
@@ -23,6 +27,10 @@ export class PostComponent implements OnInit {
   }
 
   edit(key, object) {
+  }
+
+  addLike() {
+    this.likes++;
   }
 
 
