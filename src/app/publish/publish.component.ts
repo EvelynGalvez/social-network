@@ -23,12 +23,14 @@ export class PublishComponent implements OnInit {
   
   createPublish() {
     this.publish = this.formBuilder.group({
+      title: ['', Validators.required],
       description: ['', Validators.required]
     });
   }
 
   addPost() { 
     const newPost = { 
+      title: this.publish.value.title,
       description: this.publish.value.description,
     };
 

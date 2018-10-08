@@ -9,6 +9,13 @@
   padding-top: 0.5%;
 }
 
+.title {
+margin-left: -2%;
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+color: #df8537;
+}
+
 .btnEdit {
   margin-right: 1%;
   background-color: #fcb97e;
