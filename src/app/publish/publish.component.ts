@@ -1,8 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm} from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { Publish } from '../interfaces/publish.interface';
+import { PublicationsService } from '../services/publications.service';
+
 
 @Component({
   selector: 'app-publish',
@@ -10,18 +13,66 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./publish.component.css']
 })
 export class PublishComponent implements OnInit {
-  publish: FormGroup;
+
+  public publish: any = { };
+
+  new: boolean = false;
+  id: string;
+
+  //publish: FormGroup;
   postList$ :AngularFireList<any>;
    //esto es del tipo observable de firebase, son asincronos con valor variable
-  constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase, private router: Router, public authService: AuthService) {
-    this.createPublish();
-    this.postList$ = this.database.list('/posts');
+  constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase, private router: Router, public authService: AuthService, private _publicationsService: PublicationsService, private activatedRoute: ActivatedRoute ) {
+    //this.createPublish();
+    this.activatedRoute.params
+      .subscribe( parametros => {
+        this.id = parametros['id']
+        if (this.id !== "new") {
+          this._publicationsService.getPublish( this.id )
+            .subscribe( publish => this.publish = publish)
+        }
+
+      });
+
+    //this.postList$ = this.database.list('/posts');
    }
 
   ngOnInit() {
   }
+
+  addPost(forma: NgForm) {
+    //console.log(this.publish);
+
+    if (this.id == 'new') {
+      // insertando publicación
+      this._publicationsService.newPublication( this.publish ).subscribe((data) => {
+        console.log(data);
+        console.log(data.name);
+        //this.router.navigate(['/publish', data.name])
+        this.router.navigate(['/publish', 'new']);
+        forma.reset();
+        
+      }, (error) => {
+        console.log(error);
+      });
+    } else {
+      // actualizando publicación
+      this._publicationsService.updatePublication( this.publish, this.id ).subscribe((data) => {
+        console.log(data);        
+      }, (error) => {
+        console.log(error);
+      });
+    }
+  }
+/*
+  addNew( forma: NgForm) {
+    this.router.navigate(['/publish', 'new']);
+    forma.reset();
+  }*/
+
   
-  createPublish() {
+  
+  /*createPublish() {
     this.publish = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required]
@@ -36,5 +87,5 @@ export class PublishComponent implements OnInit {
 
     this.postList$.push(newPost);//esto agrega un nuevo post
     this.publish.reset();
-  }
+  }*/
 }

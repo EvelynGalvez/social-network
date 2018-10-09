@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./publications.component.css']
 })
 export class PublicationsComponent implements OnInit {
-  posts$:Observable<any>;
+  publications$:Observable<any>;
 
   constructor(private database:AngularFireDatabase, public authService: AuthService, private router: Router) {
-    this.posts$ = this.database.list('/posts').snapshotChanges(); 
+    this.publications$ = this.database.list('/publications').snapshotChanges(); 
   }
 
   ngOnInit() {

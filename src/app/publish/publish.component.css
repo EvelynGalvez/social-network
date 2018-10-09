@@ -42,9 +42,9 @@ textarea {
   background-color: #4d5053;
 }
 
-.btn-publish:hover {
+/*.btn-publish:hover {
   background-color: #292929;
-}
+}*/
 
 @media (min-width: 1200px) {
   .form-publish{

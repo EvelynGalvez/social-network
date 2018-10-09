@@ -12,7 +12,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { environment } from '../environments/environment';
-import { AuthService } from './auth.service';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -33,6 +32,16 @@ import { PostComponent } from './post/post.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { UploadImgComponent } from './upload-img/upload-img.component';
 import { AdoptionsComponent } from './adoptions/adoptions.component';
+//Servicios
+import { PublicationsService } from './services/publications.service';
+import { AuthService } from './auth.service';
+import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'
+
+
+
+
+
 
 const appRoutes: Routes = [ // ruta + componente
   {
@@ -60,17 +69,13 @@ const appRoutes: Routes = [ // ruta + componente
     component: PublicationsComponent
   },
   {
-    path: 'adopciones',
-    component: AdoptionsComponent
-  },
-  {
-    path: 'new',
+    path: 'publish/:id',
     component: PublishComponent
   },
   {
-    path: 'post/:id',
-    component: PostComponent
-  }
+    path: 'adopciones',
+    component: AdoptionsComponent
+  },
 ];
 
 @NgModule({
@@ -88,7 +93,7 @@ const appRoutes: Routes = [ // ruta + componente
     PostComponent,
     PublicationsComponent,
     UploadImgComponent,
-    AdoptionsComponent
+    AdoptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,9 +110,13 @@ const appRoutes: Routes = [ // ruta + componente
     MatIconModule,
     RouterModule.forRoot(appRoutes),
     MatCardModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    PublicationsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
