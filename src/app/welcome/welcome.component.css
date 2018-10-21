@@ -1,22 +1,21 @@
 .welcome {
   color: black;
   font-family: 'Roboto', sans-serif;
-  background-color: rgba(253, 179, 42, 0.87);
+  background-color: #FAFAFA;
 }
 
 .name {
-  display: inline-block;
+  float: right;
   margin-right: 0px;
   margin-bottom: 2%;
   font-family: 'Roboto', sans-serif;
   padding-bottom: 0px;
   padding-top: 0px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .right {
   position: relative;
-  left: 3%;
+  left: 30%;
   top: 10px;
 }
 
@@ -24,11 +23,37 @@
   text-align: left;
   margin: 0px;
   padding: 0px;
-  border-bottom: solid 1px rgb(63, 59, 51);
 }
 
 @media (max-width: 800px) {
   .name {
     padding-bottom: 5%;
+    float: right;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
   }
+
+  .right {
+    position: relative;
+    left: -5%;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+    .name {
+      padding-bottom: 5%;
+      float: right;
+      margin: 0px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 35px;
+    }
+
+    .right {
+      position: relative;
+      left: -1%;
+    }
 }
