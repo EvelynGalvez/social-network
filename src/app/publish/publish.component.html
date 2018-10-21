@@ -1,7 +1,8 @@
-<form class="form-publish col-xs-12 col-md-12 col-lg-5" [formGroup]="publish" (ngSubmit)="addPost()" *ngIf="authService.user | async">
-    <textarea #description formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="¿Qué quieres publicar?"></textarea>
+<form class="form-publish col-xs-12 col-md-12 col-lg-5" #forma="ngForm" (ngSubmit)="addPost()" *ngIf="authService.user | async">
+    <input [(ngModel)]="publish.title" name="title" type="text" class="form-control inputTitle" placeholder="Ingresa un título para tu publicación" required>
+    <textarea [(ngModel)]="publish.description" name="description" class="form-control" rows="3" placeholder="¿Qué quieres publicar?" required></textarea>
   
-    <button class="btn btn-dark btn-publish" type="submit">
+    <button [disabled]="!forma.valid" class="btn btn-dark btn-publish" type="submit" (click)="addPost(forma)">
       ¡Agrega tu publicación!
     </button>
 </form>

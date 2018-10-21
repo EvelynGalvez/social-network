@@ -12,6 +12,15 @@
   padding-bottom: 1%;
 }
 
+.inputTitle {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 2%;
+  padding-left: 2%;
+}
+
 .welcome {
   position: absolute;
   left: 1%;
@@ -33,9 +42,9 @@ textarea {
   background-color: #4d5053;
 }
 
-.btn-publish:hover {
+/*.btn-publish:hover {
   background-color: #292929;
-}
+}*/
 
 @media (min-width: 1200px) {
   .form-publish{
