@@ -28,7 +28,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CuidadosComponent } from './cuidados/cuidados.component';
 import { DirectorioComponent } from './directorio/directorio.component';
 import { LoginCuentasComponent } from './login-cuentas/login-cuentas.component';
-import { PostComponent } from './post/post.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { UploadImgComponent } from './upload-img/upload-img.component';
 import { AdoptionsComponent } from './adoptions/adoptions.component';
@@ -36,7 +35,10 @@ import { AdoptionsComponent } from './adoptions/adoptions.component';
 import { PublicationsService } from './services/publications.service';
 import { AuthService } from './auth.service';
 import { Http, HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+
+//pipes
+import { KeysPipe } from './pipes/keys.pipe'
 
 
 
@@ -90,10 +92,10 @@ const appRoutes: Routes = [ // ruta + componente
     CuidadosComponent,
     DirectorioComponent,
     LoginCuentasComponent,
-    PostComponent,
     PublicationsComponent,
     UploadImgComponent,
     AdoptionsComponent,
+    KeysPipe,
   ],
   imports: [
     BrowserModule,

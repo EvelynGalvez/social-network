@@ -1,9 +1,18 @@
 
 <div *ngIf="authService.user | async">
-    <app-post *ngFor="let post of (publications$ | async)"
-      [post]="post.payload.val()" [key]="post.payload.key">
-    </app-post>
-    <!-- <app-upload-img></app-upload-img> -->
+    <mat-card class="post-card" *ngFor="let post of publications | keys; let i = index">
+      <mat-card-header>
+        <p class="title">{{publications[post].title}}</p>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{publications[post].description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+          <a [routerLink]="['/publish', post]"class="btn btnEdit btn-primary text-black"><i class="fas fa-edit"></i></a>
+          <a (click)="deletePublish(post)" class="btn btnDelete btn-danger text-white"><i class="fas fa-trash-alt"></i></a>
+      </mat-card-actions> 
+    </mat-card>
+    
 </div>
   
   
