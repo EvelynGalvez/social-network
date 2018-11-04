@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Component({
   selector: 'app-login-cuentas',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginCuentasComponent implements OnInit {
 
-  constructor(public authService: AuthService, public router: Router) { }
+  constructor(public authService: AuthService, public router: Router, private activatedRoute: ActivatedRoute, private database:AngularFireDatabase,) { }
 
   ngOnInit() {
   }
@@ -17,19 +18,16 @@ export class LoginCuentasComponent implements OnInit {
   onClickFacebookLogin() {
     this.authService.loginFacebook()
     .then((res)=> {
-      console.log('usuario autenticado con facebook');
-      console.log(res);
       this.router.navigate(['/publish', 'new']);
+      location.reload();
     }).catch( err => console.log(err.message));
   }
 
   onClickGoogleLogin() {
     this.authService.loginGoogle()
     .then((res)=> {
-      console.log('usuario autenticado con google');
       this.router.navigate(['/publish', 'new']);
-      console.log(res);
-      this.router.navigate(['/new']);
+      location.reload();
     }).catch( err => console.log(err.message));
   }  
 }
